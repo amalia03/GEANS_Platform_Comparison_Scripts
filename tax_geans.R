@@ -52,7 +52,10 @@ bl.tax <- lapply(bl.tax, function(x){
     x[x$species=="Limecola balthica", "species"] <- "Macoma balthica"
     x[x$species=="Owenia fisiformis", "species"] <- "Owenia fusiformis"
     x[x$species=="Sagartia elegans", "species"] <- "Cylista elegans"
-     x[x$species=="Tritia reticulatus", "species"] <- "Tritia reticulata" 
+    x[x$species=="Tritia reticulatus", "species"] <- "Tritia reticulata" 
+    x[x$species=="Ensis directus", "species"] <- "Ensis leei"
+    x[x$species=="Venerupis senegalensis", "species"] <- "Venerupis corrugata"
+    x[x$species=="Haliplanella lineata", "species"] <- "Diadumene lineata"
     x
 })
 
