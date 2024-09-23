@@ -23,4 +23,4 @@ Script content:
 7. Set up a genus and a species column based on the database match (lines 52-61)
 8. Rename species with defunct/incorrect appelations (lines 63-73)
 9. Set a limit to the lowest number of reads matching per species (lines 75-79)
-10. Create and export a matrix with the read counts per species and location (lines 81-92)
+10. Create and export a matrix with the read counts per species and location (lines 81-95)
