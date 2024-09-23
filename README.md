@@ -11,9 +11,9 @@ Starting with the direct output from NovaSeq:
 
 The script **tax_geans.R** was then used to merge and process the taxonomically assigned contigs and their respective mapped reads for the data analysis. 
 
-##tax_geans.R
+## Taxonomic assignment 
+Below is the script content for the file tax_script.R:
 
-Script content:
 1. Import and setup taxonomic assignment dataframe (lines 1-18).
 2. Apply additional alignment filtering steps (line 21).
 3. Remove taxonomic assignmnets to more than one phyla per contig (lines 23-27).
