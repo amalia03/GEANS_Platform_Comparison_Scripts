@@ -9,4 +9,4 @@ Starting with the direct output from NovaSeq:
 4. **Read quantification**: Reads were mapped back to the assembled contigs using **BBMap** using minid=0.90.
 5. **Taxonomic assignment**: Contigs were aligned to a customized version of NCBI-nt database using BLAST (-pid 97, -evalue 1E-10, -length 100)
 
-File **tax_geans.R** was then used to merge and process the outputs for the data analysis. 
+The script **tax_geans.R** was then used to merge and process the taxonomically assigned contigs and their respective mapped reads for the data analysis. 
