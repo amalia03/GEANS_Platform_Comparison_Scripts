@@ -16,6 +16,7 @@ names(bl.l) <- sample.names
 for(x in 1:length(bl.l)){    
      colnames(bl.l[[x]]) <- c('query', 'subject', 'title', 'qlen', 'slen', 'qstart', 'qend', 'sstart', 'ssend','evalue', 'score', 'length', 'pident', 'nident', 'gapopen', 'gaps', 'qcovs')
 }
+
 #Enforce alignment quality filters (alignment length and/or percent similarity)
 bl.l <- lapply(bl.l, function(x){x[x$length>=100,]})
 
