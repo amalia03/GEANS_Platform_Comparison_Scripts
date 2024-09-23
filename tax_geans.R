@@ -36,6 +36,18 @@ bl.s.top <- lapply(1:length(bl.l),function(x){
     bl.s.ts
 })
 
+#Import the mapped reads per contig from the bbmap analysis
+quant.l <- read.delim("file_fpkm.tsv", header=F,sep= "\t", stringsAsFactors=FALSE, quote= "" )
+colnames(quant.l) <- c("id", "read_length",  "bases", "coverage", "reads", "RPKM", "frags", "FPKM")}
+
+#Extract the contig from the fpkm file identifier. 
+quant.id <- strsplit(quant.l$id, split = " ")
+quant.id <- lapply(all.id, function(y){(y[1])})
+quant.l.id <- cbind(quant.l, quant.id)
+
+#Then merge the taxonomically assigned dataframe with the read mapping dataframe. 
+bl.top.quant <- merge(bl.top.sp[[x]], quant.l, by="query"))
+
 #Make a genus and species column based on the match identifiers (which usually contain the complete taxonomy of each match)
 bl.tax <- lapply(bl.s.top, function(x){
     x.tax <- strsplit(x$subject, ";")
