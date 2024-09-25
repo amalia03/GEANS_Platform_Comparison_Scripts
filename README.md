@@ -1,5 +1,47 @@
+In this depository, you will find the scripts and steps that were used for the bioinformatic analysis for our paper, *Paper X*. 
+
+## Metabarcoding data processing
+For Illumina Miseq data we used  
+1. Seqtab – to excel
+2. Excel to phyloseq
+
+## Nanopore Sequencing Analysis
+
+### Pre- processing and taxonomic linieage retreaval
+**Taxonomy_assign_after_Decona.R** to download OTUcalled_finalblastoutput.txt. Also the accessionTaxa.sql file is needed (to be downloaded from NCBI).
+Script content:
+1.	load libraries (line 1-6)
+2.	Read and load the necassary files (line 7- 15)
+3.	Get the taxonomy and add to the dataframe (line 16-17)
+4.	Filters data and p hits with highest e-values (line 18-27)
+5.	Extract read count information (31-32)
+6.	Add columns taxonomy and rename to unclassified if % identity =0 (line 33-56)
+7.	Rename name in taxonomy to "unclassified" when there are multiple hits with the same e-value (line 57- 80)
+8.	Store taxonomy names (species) in new column and keep highest hit (line 81-89)
+9.	Add consensus sequence (line 90-96)
+10.	Filter and rename data (line 97-114)
+11.	Save final dataset (line 115-121)
+
+### Processing and phyloseq object obtaining
+
+**From_decona_to_phyloseq.R**
+To try and check out file structures download and load R_list_github.xlxs, metadata_github.xlxs, and Decona_R_Object_github.Rdata to your environment.
+Script content:
+1.	Load packages and load objects (line 1-7)
+2.	Rename some columns and rows (line 8-10)
+3.	Add R_list with Sample_data to dataframe (line 11-16)
+4.	Taxonomy assignment correction: allow identification on certain taxonomic level; based on subsettable criteria (line 20-30).
+5.	Rarefaction curve of the data (line 31-60)
+6.	Prepare OTU frame, Taxa table and Metadata for phyloseq object (line 61 -107)
+7.	Produce phyloseq object (line 108-119)
+
+Additionally perform Barcode leakage correction:
+
+1.	Take 0.1% reads of each species (line 1-13)
+2.	Substract from each sample (line 14-20)
+
 ## Shotgun Sequencing data processing 
-This directory serves as a script depository for *Paper X*. It includes scripts that process the NovaSeq sequences and their subsequent taxonomic assignment. 
+Below you will find the the scripts that processed the NovaSeq sequences and their subsequent taxonomic assignment. 
 
 ### _In silico_ steps before taxonomic assignment processing. 
 Starting with the direct output from NovaSeq:
