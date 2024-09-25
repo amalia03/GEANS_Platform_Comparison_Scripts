@@ -1,4 +1,5 @@
 In this depository, you will find the scripts and steps that were used for the bioinformatic analysis for our paper, *Paper X*. 
+For more information on the metabarcoding steps, please refer to https://github.com/karlijn-doorenspleet/decona-postprocessing/tree/main. 
 
 ## Metabarcoding data processing
 For Illumina Miseq data we used  
